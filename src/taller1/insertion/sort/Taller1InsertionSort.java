@@ -8,30 +8,36 @@ package taller1.insertion.sort;
 public class Taller1InsertionSort {
 
     public static void main(String[] args) {
-       int[] input = {14, 33, 27, 35, 13, 0, 19, 1};
-       InsertionSort(input);
+       int[] Array = {65, 145, 78 ,25, 275, 1, 67, 94, 13, 38};
+        System.out.println("Datos desordenados:");
+        printNumbers(Array);
+        insertionSort(Array);
     }
-    
-    private static void printNumbers(int[] input){
-        for (int i = 0; i < input.length; i++) {
-            System.out.print(input[i] + ", ");
+
+    private static void printNumbers(int[] numeros) {
+
+        for (int i = 0; i < numeros.length; i++) {
+
+            System.out.print(numeros[i] + " ");
         }
-        
-        System.out.println("\n");
+        System.out.println(" ");
+
     }
-    
-    public static void InsertionSort(int Array[]) {
-        int n = Array.length;
+
+    public static void insertionSort(int arr[]) {
+
+        int n = arr.length;
         for (int j = 1; j < n; j++) {
-            int  key = Array[j];
+            int cont = arr[j];
             int i = j - 1;
-            while ((i > -1) && (Array[i] > key)) {
-                Array [i + 1] = Array[i];
+            while ((i > -1) && (arr[i] > cont)) {
+                arr[i + 1] = arr[i];
                 i--;
             }
-            
-            Array[i + 1] = key;
-            printNumbers(Array);
+            arr[i + 1] = cont;
+
         }
+        System.out.println("Datos ordenados:");
+        printNumbers(arr);
     }
 }
